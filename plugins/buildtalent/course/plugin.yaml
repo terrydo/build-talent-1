@@ -1,0 +1,24 @@
+plugin:
+    name: 'buildtalent.course::lang.plugin.name'
+    description: 'buildtalent.course::lang.plugin.description'
+    author: buildtalent
+    icon: oc-icon-file-movie-o
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Course
+        url: buildtalent/course/course
+        icon: icon-book
+        sideMenu:
+            side-menu-item:
+                label: Course
+                url: buildtalent/course/course
+                icon: icon-video-camera
+            side-menu-item-section:
+                label: Section
+                url: buildtalent/course/section
+                icon: icon-pagelines
+            side-menu-item3:
+                label: Lesson
+                url: buildtalent/course/lesson
+                icon: icon-files-o

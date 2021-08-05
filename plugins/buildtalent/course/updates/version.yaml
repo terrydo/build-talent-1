@@ -1,0 +1,29 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table buildtalent_course_'
+    - builder_table_create_buildtalent_course_.php
+1.0.3:
+    - 'Updated table buildtalent_course_'
+    - builder_table_update_buildtalent_course_.php
+1.0.4:
+    - 'Updated table buildtalent_course_'
+    - builder_table_update_buildtalent_course__2.php
+1.0.5:
+    - 'Updated table buildtalent_course_'
+    - builder_table_update_buildtalent_course__3.php
+1.0.6:
+    - 'Created table buildtalent_course_sections'
+    - builder_table_create_buildtalent_course_sections.php
+1.0.7:
+    - 'Updated table buildtalent_course_sections'
+    - builder_table_update_buildtalent_course_sections.php
+1.0.8:
+    - 'Created table buildtalent_course_lessons'
+    - builder_table_create_buildtalent_course_lessons.php
+1.0.9:
+    - 'Updated table buildtalent_course_lessons'
+    - builder_table_update_buildtalent_course_lessons.php
+1.0.10:
+    - 'Updated table buildtalent_course_lessons'
+    - builder_table_update_buildtalent_course_lessons_2.php

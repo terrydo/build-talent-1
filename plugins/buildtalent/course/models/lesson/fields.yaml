@@ -1,0 +1,20 @@
+fields:
+    name:
+        label: Name
+        span: auto
+        type: text
+    video:
+        label: 'File upload'
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    section:
+        label: Section
+        span: auto
+        nameFrom: name
+        descriptionFrom: description
+        type: relation

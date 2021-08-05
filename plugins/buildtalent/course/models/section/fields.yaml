@@ -1,0 +1,11 @@
+fields:
+    name:
+        label: 'Name of section'
+        span: auto
+        type: text
+    lessons:
+        label: Lessons
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation

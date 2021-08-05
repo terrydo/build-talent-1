@@ -19,7 +19,8 @@
         "ahmadfatoni/apigenerator-plugin": "^1.0",
         "vdomah/jwtauth-plugin": "^1.0",
         "samuell/cdn-plugin": "^1.0",
-        "rainlab/builder-plugin": "^1.0"
+        "rainlab/builder-plugin": "^1.0",
+        "offline/oc-cors-plugin": "^1.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^8.0|^9.0",

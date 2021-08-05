@@ -1,0 +1,10 @@
+name: Section
+form: $/buildtalent/course/models/section/fields.yaml
+modelClass: Buildtalent\Course\Models\Section
+defaultRedirect: buildtalent/course/section
+create:
+    redirect: 'buildtalent/course/section/update/:id'
+    redirectClose: buildtalent/course/section
+update:
+    redirect: buildtalent/course/section
+    redirectClose: buildtalent/course/section
