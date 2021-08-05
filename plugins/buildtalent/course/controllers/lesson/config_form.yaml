@@ -1,0 +1,10 @@
+name: Lesson
+form: $/buildtalent/course/models/lesson/fields.yaml
+modelClass: Buildtalent\Course\Models\Lesson
+defaultRedirect: buildtalent/course/lesson
+create:
+    redirect: 'buildtalent/course/lesson/update/:id'
+    redirectClose: buildtalent/course/lesson
+update:
+    redirect: buildtalent/course/lesson
+    redirectClose: buildtalent/course/lesson

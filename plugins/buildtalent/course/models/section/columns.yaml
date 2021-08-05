@@ -1,0 +1,11 @@
+columns:
+    name:
+        label: 'Name of section'
+        type: text
+        searchable: true
+    course_id:
+        label: Course
+        type: text
+        searchable: true
+        relation: course
+        select: name

@@ -1,0 +1,4 @@
+title: Lesson
+modelClass: Buildtalent\Course\Models\Lesson
+toolbar:
+    buttons: reorder_toolbar

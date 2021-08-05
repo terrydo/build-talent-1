@@ -1,0 +1,10 @@
+columns:
+    name:
+        label: Name
+        type: text
+        searchable: true
+    section_id:
+        label: 'Section''s name'
+        type: text
+        select: name
+        relation: section

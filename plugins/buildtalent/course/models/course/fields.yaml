@@ -1,0 +1,28 @@
+fields:
+    name:
+        label: Name
+        span: left
+        type: text
+    price:
+        label: Price
+        span: right
+        type: number
+    description:
+        label: Description
+        size: large
+        span: full
+        type: textarea
+    status:
+        label: Status
+        options:
+            - private
+            - public
+        showSearch: true
+        span: auto
+        type: dropdown
+    sections:
+        label: Sections
+        span: auto
+        nameFrom: name
+        descriptionFrom: description
+        type: relation
