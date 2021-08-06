@@ -31,7 +31,7 @@ class CorsMiddleware
         try {
             $response->header('Access-Control-Allow-Origin', '*');
             $response->header('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE, OPTIONS');
-            $response->header('Access-Control-Allow-Headers', 'Origin, Content-Type, X-Auth-Token');
+            $response->header('Access-Control-Allow-Headers', 'Origin, Content-Type, X-Auth-Token, Authorization');
 
             $method = $_SERVER['REQUEST_METHOD'];
             // For preflight requests
