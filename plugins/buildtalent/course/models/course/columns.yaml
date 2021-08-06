@@ -1,13 +1,13 @@
 columns:
     name:
-        label: Name
+        label: 'Tên khoá học'
         type: text
         searchable: true
         sortable: true
     price:
-        label: Price
+        label: 'Giá khoá học'
         type: number
         sortable: true
     status:
-        label: Status
+        label: 'Trạng thái khoá học'
         type: text

@@ -1,10 +1,10 @@
 columns:
     name:
-        label: Name
+        label: 'Tên bài học'
         type: text
         searchable: true
     section_id:
-        label: 'Section''s name'
+        label: 'Học phần'
         type: text
         select: name
         relation: section

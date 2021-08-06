@@ -1,11 +1,11 @@
 columns:
     name:
-        label: 'Name of section'
+        label: 'Tên học phần'
         type: text
         searchable: true
     course_id:
-        label: Course
+        label: 'Khoá học'
         type: text
         searchable: true
-        relation: course
         select: name
+        relation: course

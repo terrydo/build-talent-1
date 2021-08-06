@@ -1,20 +1,16 @@
 fields:
     name:
-        label: Name
+        label: 'Tên bài học'
         span: auto
         type: text
-    video:
-        label: 'File upload'
-        mode: file
-        useCaption: true
-        thumbOptions:
-            mode: crop
-            extension: auto
-        span: auto
-        type: fileupload
     section:
-        label: Section
-        span: auto
+        label: 'Học phần'
         nameFrom: name
         descriptionFrom: description
+        span: auto
         type: relation
+    video:
+        label: 'Video bài học'
+        span: auto
+        mode: file
+        type: mediafinder

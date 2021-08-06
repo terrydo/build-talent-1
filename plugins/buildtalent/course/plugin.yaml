@@ -6,19 +6,19 @@ plugin:
     homepage: ''
 navigation:
     main-menu-item:
-        label: Course
+        label: 'Khoá học'
         url: buildtalent/course/course
         icon: icon-book
         sideMenu:
             side-menu-item:
-                label: Course
+                label: 'Khoá học'
                 url: buildtalent/course/course
                 icon: icon-video-camera
             side-menu-item-section:
-                label: Section
+                label: 'Học phần'
                 url: buildtalent/course/section
                 icon: icon-pagelines
             side-menu-item3:
-                label: Lesson
+                label: 'Bài học'
                 url: buildtalent/course/lesson
                 icon: icon-files-o

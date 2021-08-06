@@ -1,11 +1,17 @@
 fields:
     name:
-        label: 'Name of section'
+        label: 'Tên học phần'
         span: auto
         type: text
     lessons:
-        label: Lessons
+        label: 'Bài học'
         nameFrom: name
         descriptionFrom: description
         span: auto
+        type: relation
+    course:
+        label: 'Khoá học'
+        span: auto
+        nameFrom: name
+        descriptionFrom: description
         type: relation

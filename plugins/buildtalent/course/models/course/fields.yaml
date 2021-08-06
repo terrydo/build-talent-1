@@ -1,27 +1,27 @@
 fields:
     name:
-        label: Name
+        label: 'Tên khoá học'
         span: left
         type: text
     price:
-        label: Price
+        label: Giá
         span: right
         type: number
     description:
-        label: Description
-        size: large
+        label: 'Mô tả khoá học'
+        size: ''
         span: full
-        type: textarea
+        type: richeditor
     status:
-        label: Status
+        label: 'Trạng thái'
         options:
-            - private
-            - public
+            - 'Ẩn khoá học'
+            - 'Công khai khoá học'
         showSearch: true
         span: auto
         type: dropdown
     sections:
-        label: Sections
+        label: 'Học phần'
         span: auto
         nameFrom: name
         descriptionFrom: description
