@@ -27,3 +27,6 @@
 1.0.10:
     - 'Updated table buildtalent_course_lessons'
     - builder_table_update_buildtalent_course_lessons_2.php
+1.0.11:
+    - 'Updated table buildtalent_course_lessons'
+    - builder_table_update_buildtalent_course_lessons_3.php
