@@ -11,6 +11,6 @@ fields:
         type: relation
     video:
         label: 'Video bài học'
-        span: auto
         mode: file
+        span: auto
         type: mediafinder

@@ -9,7 +9,7 @@ fields:
         type: number
     description:
         label: 'Mô tả khoá học'
-        size: ''
+        size: large
         span: full
         type: richeditor
     status:

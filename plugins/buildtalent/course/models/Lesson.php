@@ -23,13 +23,15 @@ class Lesson extends Model
      * @var array Validation rules
      */
     public $rules = [
-    ];
 
-    public $attachOne = [
-        'video' => 'System\Models\File'
     ];
 
     public $belongsTo = [
         'section' => Section::class
     ];
+
+    public function getVideoAttribute($value)
+    {
+        return config('app.url') . '/storage/app/media' . $value;
+    }
 }
