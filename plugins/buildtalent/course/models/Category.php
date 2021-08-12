@@ -5,7 +5,7 @@ use Model;
 /**
  * Model
  */
-class Lesson extends Model
+class Category extends Model
 {
     use \October\Rain\Database\Traits\Validation;
 
@@ -17,21 +17,15 @@ class Lesson extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'buildtalent_course_lessons';
+    public $table = 'buildtalent_course_category';
 
     /**
      * @var array Validation rules
      */
     public $rules = [
-
     ];
 
-    public $belongsTo = [
-        'section' => Section::class
+    public $hasMany = [
+        'courses' => Course::class
     ];
-
-    public function getMediaAttribute($value)
-    {
-        return config('app.url') . '/storage/app/media' . $value;
-    }
 }

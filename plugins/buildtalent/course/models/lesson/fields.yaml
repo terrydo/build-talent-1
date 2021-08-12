@@ -9,7 +9,7 @@ fields:
         descriptionFrom: description
         span: auto
         type: relation
-    video:
+    media:
         label: 'Video bài học'
         mode: file
         span: auto

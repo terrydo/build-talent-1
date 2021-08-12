@@ -1,17 +1,88 @@
 fields:
     name:
         label: 'Tên khoá học'
-        span: left
+        span: full
         type: text
-    price:
-        label: Giá
-        span: right
+    slug:
+        label: Slug
+        span: auto
+        preset:
+            field: name
+            type: slug
+        type: text
+    price_before_discount:
+        label: 'Giá trước khi giảm'
+        span: auto
         type: number
+    price:
+        label: 'Giá khoá học'
+        span: auto
+        type: number
+    author:
+        label: 'Tên tác giả'
+        span: auto
+        type: text
+    course_image:
+        label: 'Ảnh khoá học'
+        span: auto
+        mode: image
+        type: mediafinder
+    video_intro:
+        label: 'Video giới thiệu khoá học'
+        mode: file
+        span: auto
+        type: mediafinder
+    include_in_course:
+        label: 'Khoá học bao gồm'
+        size: ''
+        span: auto
+        type: textarea
+    requirements:
+        label: 'Yêu cầu trước khi tham gia khoá học'
+        size: ''
+        span: auto
+        type: textarea
+    excerpt:
+        label: 'Mô tả ngắn'
+        span: full
+        type: text
     description:
         label: 'Mô tả khoá học'
         size: large
         span: full
         type: richeditor
+    level:
+        label: 'Cấp độ khoá học'
+        options:
+            - 'Mọi cấp độ'
+            - 'Người mới'
+            - 'Chuyên viên'
+            - 'Chuyên gia'
+        showSearch: true
+        span: auto
+        type: dropdown
+    joined_user:
+        label: 'Số học sinh tham gia'
+        span: auto
+        type: number
+    reward:
+        label: 'Học viên nhận lại được gì sau khoá học'
+        prompt: Thêm
+        style: default
+        span: auto
+        type: repeater
+        form:
+            fields:
+                key:
+                    label: 'Lợi ích'
+                    span: auto
+                    type: text
+    sections:
+        label: 'Học phần'
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation
     status:
         label: 'Trạng thái'
         options:
@@ -20,8 +91,14 @@ fields:
         showSearch: true
         span: auto
         type: dropdown
-    sections:
-        label: 'Học phần'
+    category:
+        label: 'Thể loại'
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation
+    tags:
+        label: 'Tag khoá học'
         span: auto
         nameFrom: name
         descriptionFrom: description

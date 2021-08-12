@@ -1,0 +1,10 @@
+name: Category
+form: $/buildtalent/course/models/category/fields.yaml
+modelClass: Buildtalent\Course\Models\Category
+defaultRedirect: buildtalent/course/category
+create:
+    redirect: 'buildtalent/course/category/update/:id'
+    redirectClose: buildtalent/course/category
+update:
+    redirect: buildtalent/course/category
+    redirectClose: buildtalent/course/category

@@ -10,6 +10,10 @@ navigation:
         url: buildtalent/course/course
         icon: icon-book
         sideMenu:
+            side-menu-item-category:
+                label: 'Thể loại'
+                url: buildtalent/course/category
+                icon: icon-sitemap
             side-menu-item:
                 label: 'Khoá học'
                 url: buildtalent/course/course
@@ -22,3 +26,7 @@ navigation:
                 label: 'Bài học'
                 url: buildtalent/course/lesson
                 icon: icon-files-o
+            side-menu-item-buy-course:
+                label: 'Yêu cầu mua khoá học'
+                url: buildtalent/course/payment
+                icon: icon-shopping-cart
