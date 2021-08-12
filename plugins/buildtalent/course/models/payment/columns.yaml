@@ -1,0 +1,18 @@
+columns:
+    course_id:
+        label: 'Khoá học'
+        type: text
+        searchable: true
+        sortable: true
+        select: name
+        relation: course
+    user_id:
+        label: 'Người dùng'
+        type: text
+        searchable: true
+        sortable: true
+        select: email
+        relation: user
+    invoice_id:
+        label: 'Trạng thái thanh toán'
+        type: text

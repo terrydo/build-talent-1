@@ -30,3 +30,51 @@
 1.0.11:
     - 'Updated table buildtalent_course_lessons'
     - builder_table_update_buildtalent_course_lessons_3.php
+1.0.12:
+    - 'Created table buildtalent_course_course_user'
+    - builder_table_create_buildtalent_course_course_user.php
+1.0.13:
+    - 'Created table buildtalent_course_invoice'
+    - builder_table_create_buildtalent_course_invoice.php
+1.0.14:
+    - 'Updated table buildtalent_course_invoice'
+    - builder_table_update_buildtalent_course_invoice.php
+1.0.15:
+    - 'Updated table buildtalent_course_invoice'
+    - builder_table_update_buildtalent_course_invoice_2.php
+1.0.16:
+    - 'Updated table buildtalent_course_lessons'
+    - builder_table_update_buildtalent_course_lessons_4.php
+1.0.17:
+    - 'Updated table buildtalent_course_lessons'
+    - builder_table_update_buildtalent_course_lessons_5.php
+1.0.18:
+    - 'Updated table buildtalent_course_lessons'
+    - builder_table_update_buildtalent_course_lessons_6.php
+1.0.19:
+    - 'Updated table buildtalent_course_lessons'
+    - builder_table_update_buildtalent_course_lessons_7.php
+1.0.20:
+    - 'Created table buildtalent_course_category'
+    - builder_table_create_buildtalent_course_category.php
+1.0.21:
+    - 'Updated table buildtalent_course_'
+    - builder_table_update_buildtalent_course__4.php
+1.0.22:
+    - 'Updated table buildtalent_course_'
+    - builder_table_update_buildtalent_course__5.php
+1.0.23:
+    - 'Updated table buildtalent_course_'
+    - builder_table_update_buildtalent_course__6.php
+1.0.24:
+    - 'Updated table buildtalent_course_'
+    - builder_table_update_buildtalent_course__7.php
+1.0.25:
+    - 'Updated table buildtalent_course_'
+    - builder_table_update_buildtalent_course__8.php
+1.0.26:
+    - 'Created table buildtalent_course_tags'
+    - builder_table_create_buildtalent_course_tags.php
+1.0.27:
+    - 'Created table buildtalent_course_tag_user'
+    - builder_table_create_buildtalent_course_tag_user.php

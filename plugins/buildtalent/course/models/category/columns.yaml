@@ -1,0 +1,6 @@
+columns:
+    name:
+        label: 'Tên thể loại'
+        type: text
+        searchable: true
+        sortable: true
