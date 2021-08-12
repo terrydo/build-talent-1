@@ -10,6 +10,10 @@ fields:
             field: name
             type: slug
         type: text
+    author:
+        label: 'Tên giảng viên'
+        span: auto
+        type: text
     price_before_discount:
         label: 'Giá trước khi giảm'
         span: auto
@@ -18,14 +22,10 @@ fields:
         label: 'Giá khoá học'
         span: auto
         type: number
-    author:
-        label: 'Tên tác giả'
-        span: auto
-        type: text
     course_image:
         label: 'Ảnh khoá học'
-        span: auto
         mode: image
+        span: auto
         type: mediafinder
     video_intro:
         label: 'Video giới thiệu khoá học'
@@ -34,18 +34,19 @@ fields:
         type: mediafinder
     include_in_course:
         label: 'Khoá học bao gồm'
-        size: ''
-        span: auto
-        type: textarea
+        size: small
+        span: full
+        type: richeditor
     requirements:
-        label: 'Yêu cầu trước khi tham gia khoá học'
-        size: ''
-        span: auto
-        type: textarea
+        label: 'Yêu cầu của khoá học'
+        size: small
+        span: full
+        type: richeditor
     excerpt:
         label: 'Mô tả ngắn'
+        size: ''
         span: full
-        type: text
+        type: textarea
     description:
         label: 'Mô tả khoá học'
         size: large
@@ -65,7 +66,7 @@ fields:
         label: 'Số học sinh tham gia'
         span: auto
         type: number
-    reward:
+    skill_gained:
         label: 'Học viên nhận lại được gì sau khoá học'
         prompt: Thêm
         style: default

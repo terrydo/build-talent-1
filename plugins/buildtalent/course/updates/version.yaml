@@ -78,3 +78,6 @@
 1.0.27:
     - 'Created table buildtalent_course_tag_user'
     - builder_table_create_buildtalent_course_tag_user.php
+1.0.28:
+    - 'Updated table buildtalent_course_'
+    - builder_table_update_buildtalent_course__9.php

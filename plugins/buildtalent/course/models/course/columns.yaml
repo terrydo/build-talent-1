@@ -8,6 +8,3 @@ columns:
         label: 'Giá khoá học'
         type: number
         sortable: true
-    status:
-        label: 'Trạng thái khoá học'
-        type: text
