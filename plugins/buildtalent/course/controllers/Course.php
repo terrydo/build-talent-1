@@ -51,6 +51,8 @@ class Course extends Controller
 //        $level = $request->level;
 //        $category = $request->category;
 //        $price = $request->price;
+        $per_page = $request->per_page ? $request->per_page : config('buildtalent.course.paginate');
+
         $response = CourseModel::when(isset($request->level), function ($query) use ($request) {
             $level = $request['keyword'];
 
@@ -68,7 +70,7 @@ class Course extends Controller
             } else {
                 return $query->where('price', '>', 0);
             }
-        })->with(['tags'])->get();
+        })->with(['tags'])->paginate($per_page);
 
         return $this->helpers->apiArrayResponseBuilder(200, 'success', $response);
     }
