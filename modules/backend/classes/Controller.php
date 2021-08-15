@@ -1,6 +1,8 @@
 <?php namespace Backend\Classes;
 
 use Lang;
+use RainLab\User\Models\User;
+use Tymon\JWTAuth\Facades\JWTAuth;
 use View;
 use Flash;
 use System;
@@ -42,6 +44,7 @@ class Controller extends Extendable
      * @var object Reference the logged in admin user.
      */
     protected $user;
+    protected $endUser;
 
     /**
      * @var object Collection of WidgetBase objects used on this page.

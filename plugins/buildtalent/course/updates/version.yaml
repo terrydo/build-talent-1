@@ -81,3 +81,21 @@
 1.0.28:
     - 'Updated table buildtalent_course_'
     - builder_table_update_buildtalent_course__9.php
+1.0.29:
+    - 'Updated table buildtalent_course_'
+    - builder_table_update_buildtalent_course__10.php
+1.0.30:
+    - 'Drop table buildtalent_course_invoice'
+    - builder_table_delete_buildtalent_course_invoice.php
+1.0.31:
+    - 'Updated table buildtalent_course_course_user'
+    - builder_table_update_buildtalent_course_course_user.php
+1.0.32:
+    - 'Updated table buildtalent_course_course_user'
+    - builder_table_update_buildtalent_course_course_user_2.php
+1.0.33:
+    - 'Updated table buildtalent_course_course_user'
+    - builder_table_update_buildtalent_course_course_user_3.php
+1.0.34:
+    - 'Updated table buildtalent_course_course_user'
+    - builder_table_update_buildtalent_course_course_user_4.php

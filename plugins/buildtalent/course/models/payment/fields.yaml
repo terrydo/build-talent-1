@@ -1,0 +1,31 @@
+fields:
+    course:
+        label: 'Tên khoá học'
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        readOnly: 1
+        type: relation
+    user:
+        label: 'Email khách hàng'
+        nameFrom: name
+        descriptionFrom: description
+        select: email
+        span: auto
+        readOnly: 1
+        type: relation
+    payment_method:
+        label: 'Phương thức thanh toán'
+        options:
+            direct_payment: 'Chuyển khoản trực tiếp'
+        showSearch: true
+        span: auto
+        readOnly: 0
+        type: dropdown
+    payment_status:
+        label: 'Phê duyệt yêu cầu'
+        options:
+            1: 'Chấp nhận'
+            2: 'Từ chối'
+        span: auto
+        type: balloon-selector

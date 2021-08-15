@@ -1,5 +1,6 @@
 <?php namespace RainLab\User\Models;
 
+use Buildtalent\Course\Models\Course;
 use Str;
 use Auth;
 use Mail;
@@ -34,7 +35,12 @@ class User extends UserBase
      * @var array Relations
      */
     public $belongsToMany = [
-        'groups' => [UserGroup::class, 'table' => 'users_groups']
+        'groups' => [UserGroup::class, 'table' => 'users_groups'],
+        'courses' => [
+            Course::class,
+            'table' => 'buildtalent_course_course_user',
+//            'pivot' => ['payment_method', 'payment_status']
+        ]
     ];
 
     public $attachOne = [
@@ -55,7 +61,7 @@ class User extends UserBase
         'created_ip_address',
         'last_ip_address'
     ];
-    
+
     /**
      * Reset guarded fields, because we use $fillable instead.
      * @var array The attributes that aren't mass assignable.

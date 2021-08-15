@@ -10,12 +10,6 @@ class Payment extends Model
 {
     use \October\Rain\Database\Traits\Validation;
 
-    /*
-     * Disable timestamps by default.
-     * Remove this line if timestamps are defined in the database table.
-     */
-    public $timestamps = false;
-
 
     /**
      * @var string The database table used by the model.
@@ -28,9 +22,8 @@ class Payment extends Model
     public $rules = [
     ];
 
-    public $hasOne = [
-        'user' => [User::class, 'key' => 'id'],
-        'course' => [Course::class, 'key' => 'id'],
-        'invoice' => [Invoice::class, 'key' => 'id'],
+    public $belongsTo = [
+        'course' => [Course::class],
+        'user' => [User::class],
     ];
 }
