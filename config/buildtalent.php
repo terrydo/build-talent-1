@@ -16,5 +16,6 @@ return [
     'payment_status' => [
         'pending' => 0,
         'complete' => 1,
+        'reject' => 2,
     ],
 ];

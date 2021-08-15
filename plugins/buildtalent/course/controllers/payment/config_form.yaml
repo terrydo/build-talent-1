@@ -1,0 +1,10 @@
+name: Payment
+form: $/buildtalent/course/models/payment/fields.yaml
+modelClass: Buildtalent\Course\Models\Payment
+defaultRedirect: buildtalent/course/payment
+create:
+    redirect: 'buildtalent/course/payment/update/:id'
+    redirectClose: buildtalent/course/payment
+update:
+    redirect: buildtalent/course/payment
+    redirectClose: buildtalent/course/payment

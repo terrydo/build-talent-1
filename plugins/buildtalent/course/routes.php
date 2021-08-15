@@ -6,5 +6,6 @@ Route::get('api/v1/categories', ['uses' => '\Buildtalent\Course\Controllers\Cate
 Route::get('api/v1/categories/{id}', ['uses' => '\Buildtalent\Course\Controllers\Category@showCategory']);
 
 Route::group(['middleware' => '\Tymon\JWTAuth\Middleware\GetUserFromToken'], function () {
-
+    Route::post('api/v1/courses/buy-course', ['uses' => '\Buildtalent\Course\Controllers\Payment@buyCourse']);
+    Route::post('api/v1/courses/my-course', ['uses' => '\Buildtalent\Course\Controllers\Payment@myCourse']);
 });

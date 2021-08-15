@@ -1,18 +1,19 @@
 columns:
     course_id:
-        label: 'Khoá học'
+        label: 'Tên khoá học'
         type: text
         searchable: true
-        sortable: true
+        sortable: false
         select: name
         relation: course
     user_id:
-        label: 'Người dùng'
+        label: 'Email khách hàng'
         type: text
         searchable: true
-        sortable: true
+        sortable: false
         select: email
         relation: user
-    invoice_id:
-        label: 'Trạng thái thanh toán'
-        type: text
+    created_at:
+        label: 'Thời gian tạo yêu cầu'
+        type: timesince
+        sortable: true
