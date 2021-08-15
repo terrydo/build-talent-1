@@ -99,3 +99,6 @@
 1.0.34:
     - 'Updated table buildtalent_course_course_user'
     - builder_table_update_buildtalent_course_course_user_4.php
+1.0.35:
+    - 'Updated table buildtalent_course_sections'
+    - builder_table_update_buildtalent_course_sections_2.php

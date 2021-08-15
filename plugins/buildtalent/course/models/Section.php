@@ -12,7 +12,7 @@ class Section extends Model
 
     protected $dates = ['deleted_at'];
 
-
+    protected $jsonable = ['document'];
     /**
      * @var string The database table used by the model.
      */

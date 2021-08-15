@@ -39,7 +39,7 @@ class User extends UserBase
         'courses' => [
             Course::class,
             'table' => 'buildtalent_course_course_user',
-//            'pivot' => ['payment_method', 'payment_status']
+            'pivot' => ['payment_method', 'payment_status']
         ]
     ];
 
