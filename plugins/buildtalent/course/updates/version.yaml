@@ -9,3 +9,6 @@
 1.0.3:
     - 'Add seeder for course categories'
     - seeder103.php
+1.0.4:
+    - 'Updated table buildtalent_course_course_user'
+    - builder_table_update_buildtalent_course_course_user.php
