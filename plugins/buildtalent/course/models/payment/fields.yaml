@@ -29,3 +29,12 @@ fields:
             2: 'Từ chối'
         span: auto
         type: balloon-selector
+    tracking_id:
+        label: 'Mã đơn hàng'
+        span: auto
+        readOnly: 1
+        hidden: 0
+        context:
+            - update
+            - preview
+        type: text
