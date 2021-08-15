@@ -6,3 +6,6 @@
 1.0.2:
     - 'Add seeder for course tags'
     - seeder102.php
+1.0.3:
+    - 'Add seeder for course categories'
+    - seeder103.php
