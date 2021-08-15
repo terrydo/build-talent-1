@@ -1,7 +1,7 @@
 fields:
     name:
         label: 'Tên học phần'
-        span: auto
+        span: full
         type: text
     lessons:
         label: 'Bài học'
@@ -15,3 +15,12 @@ fields:
         nameFrom: name
         descriptionFrom: description
         type: relation
+    document:
+        label: 'Tài liệu'
+        type: repeater
+        form:
+            fields:
+                document:
+                    label: 'Tài liệu'
+                    type: mediafinder
+                    mode: file
