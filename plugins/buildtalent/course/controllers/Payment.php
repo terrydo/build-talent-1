@@ -59,9 +59,7 @@ class Payment extends Controller
 
         $endUser = User::select('id', 'name', 'email', 'username')->where('id', '=', $id)->first();
 
-        $response = $endUser->courses()
-            ->where('payment_status', '=', config('buildtalent.payment_status.complete'))
-            ->get();
+        $response = $endUser->courses()->with(['sections'])->get();
 
         return $this->helpers->apiArrayResponseBuilder(200, 'success', $response);
     }
