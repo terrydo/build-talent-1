@@ -9,17 +9,15 @@ class BuilderTableUpdateBuildtalentCourseCourseUser extends Migration
     {
         Schema::table('buildtalent_course_course_user', function($table)
         {
-            $table->integer('payment_method');
-            $table->integer('payment_status');
+            $table->string('tracking_id', 255);
         });
     }
-    
+
     public function down()
     {
         Schema::table('buildtalent_course_course_user', function($table)
         {
-            $table->dropColumn('payment_method');
-            $table->dropColumn('payment_status');
+            $table->dropIfExists('tracking_id');
         });
     }
 }

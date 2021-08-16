@@ -1,4 +1,6 @@
-<?php namespace Buildtalent\Course\Models;
+<?php
+
+namespace Buildtalent\Course\Models;
 
 use Model;
 use RainLab\User\Models\User;
@@ -19,11 +21,27 @@ class Payment extends Model
     /**
      * @var array Validation rules
      */
-    public $rules = [
-    ];
+    public $rules = [];
 
     public $belongsTo = [
         'course' => [Course::class],
         'user' => [User::class],
     ];
+
+    public function getPaymentMethodAttribute($value)
+    {
+        switch ($value) {
+            case 'direct_payment':
+                return 'Chuyển khoản';
+                break;
+            default:
+                return 'Không rõ';
+        }
+    }
+
+    public function getPaymentStatusAttribute($value)
+    {
+        if ($value == 0) return 'Chưa thanh toán';
+        return 'Đã thanh toán';
+    }
 }

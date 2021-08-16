@@ -17,3 +17,17 @@ columns:
         label: 'Thời gian tạo yêu cầu'
         type: timesince
         sortable: true
+    tracking_id:
+        label: 'Mã đơn hàng'
+        type: text
+        searchable: true
+        sortable: false
+    updated_at:
+        label: 'Thời gian cập nhật gần nhất'
+        type: datetime
+    payment_method:
+        label: 'Phương thức thanh toán'
+        type: text
+    payment_status:
+        label: 'Trạng thái'
+        type: number
