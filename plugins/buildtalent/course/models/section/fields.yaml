@@ -15,12 +15,16 @@ fields:
         nameFrom: name
         descriptionFrom: description
         type: relation
-    document:
+    documents:
         label: 'Tài liệu'
+        prompt: 'Add new item'
+        style: default
+        span: full
         type: repeater
         form:
             fields:
-                document:
+                link:
                     label: 'Tài liệu'
-                    type: mediafinder
                     mode: file
+                    span: full
+                    type: mediafinder

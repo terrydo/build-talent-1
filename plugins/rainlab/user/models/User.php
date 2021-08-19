@@ -39,7 +39,7 @@ class User extends UserBase
         'courses' => [
             Course::class,
             'table' => 'buildtalent_course_course_user',
-            'pivot' => ['payment_method', 'payment_status']
+            'pivot' => ['payment_method', 'payment_status', 'learning_tracking']
         ]
     ];
 
@@ -59,7 +59,9 @@ class User extends UserBase
         'password',
         'password_confirmation',
         'created_ip_address',
-        'last_ip_address'
+        'last_ip_address',
+        'phone',
+        'sex',
     ];
 
     /**
@@ -72,7 +74,7 @@ class User extends UserBase
     /**
      * Purge attributes from data set.
      */
-    protected $purgeable = ['password_confirmation', 'send_invite'];
+    protected $purgeable = ['send_invite'];
 
     protected $dates = [
         'last_seen',

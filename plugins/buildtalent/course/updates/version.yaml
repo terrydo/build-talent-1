@@ -12,3 +12,21 @@
 1.0.4:
     - 'Updated table buildtalent_course_course_user'
     - builder_table_update_buildtalent_course_course_user.php
+1.0.5:
+    - 'Updated table buildtalent_course_sections'
+    - builder_table_update_buildtalent_course_sections.php
+1.0.6:
+    - 'Updated table buildtalent_course_sections'
+    - builder_table_update_buildtalent_course_sections_3.php
+1.0.7:
+    - 'Updated table buildtalent_course_course_user'
+    - builder_table_update_buildtalent_course_course_user_2.php
+1.0.8:
+    - 'Updated table buildtalent_course_course_user'
+    - builder_table_update_buildtalent_course_course_user_3.php
+1.0.9:
+    - 'Updated table buildtalent_course_course_user'
+    - builder_table_update_buildtalent_course_course_user_4.php
+1.0.10:
+    - 'Updated table buildtalent_course_course_user'
+    - builder_table_update_buildtalent_course_course_user_5.php

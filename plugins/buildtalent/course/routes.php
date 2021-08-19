@@ -8,4 +8,5 @@ Route::get('api/v1/categories/{id}', ['uses' => '\Buildtalent\Course\Controllers
 Route::group(['middleware' => '\Tymon\JWTAuth\Middleware\GetUserFromToken'], function () {
     Route::post('api/v1/courses/buy-course', ['uses' => '\Buildtalent\Course\Controllers\Payment@buyCourse']);
     Route::post('api/v1/courses/my-course', ['uses' => '\Buildtalent\Course\Controllers\Payment@myCourse']);
+    Route::post('api/v1/courses/learning-tracking', ['uses' => '\Buildtalent\Course\Controllers\Course@learningTracking']);
 });
