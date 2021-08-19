@@ -4,9 +4,11 @@ use Backend\Classes\Controller;
 use BackendMenu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
+use RainLab\User\Facades\Auth;
 use RainLab\User\Models\User;
 use AhmadFatoni\ApiGenerator\Helpers\Helpers;
 use Buildtalent\Course\Models\Course as CourseModel;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
 class Course extends Controller
 {
@@ -73,5 +75,30 @@ class Course extends Controller
         })->with(['tags'])->paginate($per_page);
 
         return $this->helpers->apiArrayResponseBuilder(200, 'success', $response);
+    }
+
+    public function learningTracking(Request $request)
+    {
+        $lesson_id = $request->lesson_id;
+        $course_id = $request->course_id;
+        $token = JWTAuth::getToken();
+        $user = JWTAuth::toUser($token);
+        $data = [];
+
+        $learning_tracking = json_decode($user->courses()
+            ->where('course_id', $course_id)->first()
+            ->toArray()['pivot']['learning_tracking']);
+
+        if (is_array($learning_tracking)) {
+            if (!in_array($lesson_id, $learning_tracking)) {
+                array_push($learning_tracking, $lesson_id);
+                $user->courses()->updateExistingPivot($course_id, ['learning_tracking' => json_encode($learning_tracking)]);
+            }
+        } else {
+            array_push($data, $lesson_id);
+            $user->courses()->updateExistingPivot($course_id, ['learning_tracking' => json_encode($data)]);
+        }
+
+        return $this->helpers->apiArrayResponseBuilder(200, 'success', collect());
     }
 }

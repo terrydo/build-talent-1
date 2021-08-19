@@ -6,6 +6,8 @@ use Cms\Classes\Controller;
 
 use Illuminate\Http\Request;
 use AhmadFatoni\ApiGenerator\Helpers\Helpers;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 use Tymon\JWTAuth\Facades\JWTAuth;
 use RainLab\User\Models\User;
 
@@ -36,13 +38,15 @@ class UsersAPIController extends Controller
         $decodedToken = JWTAuth::getPayload($token)->toArray();
         $id = $decodedToken['sub'];
 
-        $user = $this->User->select('id', 'name', 'email', 'username')->where('id', '=', $id)->first();
+        $user = $this->User->select('id', 'name', 'email', 'username', 'phone', 'sex')->where('id', '=', $id)->first();
 
         $response = [
             'id' => $user->id,
             'name' => $user->name,
             'email' => $user->email,
             'username' => $user->username,
+            'phone' => $user->phone,
+            'sex' => $user->sex,
             'avatar_url' => $user->getAvatarThumb(100, 100)
         ];
 
@@ -82,18 +86,56 @@ class UsersAPIController extends Controller
         }
     }
 
-    public function update($id, Request $request)
+    public function updateProfile(Request $request)
     {
+        $token = JWTAuth::getToken();
+        $decodedToken = JWTAuth::getPayload($token)->toArray();
+        $id = $decodedToken['sub'];
 
-        $status = $this->User->where('id', $id)->update($data);
+        $user = $this->User->find($id);
+
+        $user->name = $request->name;
+        $user->sex = $request->sex;
+        $user->phone = $request->phone;
+        $status = $user->save();
 
         if ($status) {
-
-            return $this->helpers->apiArrayResponseBuilder(200, 'success', 'Data has been updated successfully.');
+            return $this->helpers->apiArrayResponseBuilder(200, 'success', ['message' => 'Data has been updated successfully.']);
         } else {
-
-            return $this->helpers->apiArrayResponseBuilder(400, 'bad request', 'Error, data failed to update.');
+            return $this->helpers->apiArrayResponseBuilder(400, 'bad request', ['message' => 'Error, data failed to update.']);
         }
+    }
+
+    public function updateAvatar(Request $request)
+    {
+        $token = JWTAuth::getToken();
+        $decodedToken = JWTAuth::getPayload($token)->toArray();
+        $id = $decodedToken['sub'];
+
+        $user = $this->User->find($id);
+
+        $user->avatar = \Input::file('avatar');
+        $status = $user->save();
+
+        if ($status) {
+            return $this->helpers->apiArrayResponseBuilder(200, 'success', ['message' => 'Data has been updated successfully.']);
+        } else {
+            return $this->helpers->apiArrayResponseBuilder(400, 'bad request', ['message' => 'Error, data failed to update.']);
+        }
+    }
+
+    public function updatePassword(Request $request)
+    {
+        $token = JWTAuth::getToken();
+        $decodedToken = JWTAuth::getPayload($token)->toArray();
+        $id = $decodedToken['sub'];
+
+        $user = $this->User->find($id);
+
+        $user->password = bcrypt($request->password);
+        $status = $user->save();
+
+        return $this->helpers->apiArrayResponseBuilder(200, 'success', ['message' => 'Data has been updated successfully.']);
     }
 
     public function delete($id)
