@@ -63,4 +63,25 @@ class Payment extends Controller
 
         return $this->helpers->apiArrayResponseBuilder(200, 'success', $response);
     }
+
+    public function myDetailCourse($course_id, Request $request)
+    {
+        $token = JWTAuth::getToken();
+        $decodedToken = JWTAuth::getPayload($token)->toArray();
+        $id = $decodedToken['sub'];
+
+        $endUser = User::select('id', 'name', 'email', 'username')->where('id', '=', $id)->first();
+
+        $response = $endUser->courses()
+            ->where('course_id', '=', $course_id)
+            ->where('payment_status', '=', config('buildtalent.payment_status.complete'))
+            ->with(['sections'])
+            ->get();
+
+        if (count($response->toArray()) > 0) {
+            return $this->helpers->apiArrayResponseBuilder(200, 'success', $response);
+        } else {
+            return $this->helpers->apiArrayResponseBuilder(401, 'Not found', $response);
+        }
+    }
 }

@@ -1,58 +1,57 @@
-# ===================================
-#  Field Definitions
-# ===================================
-
 fields:
     title:
-        label: rainlab.blog::lang.post.title
+        label: 'rainlab.blog::lang.post.title'
         span: left
-        placeholder: rainlab.blog::lang.post.title_placeholder
-
+        placeholder: 'rainlab.blog::lang.post.title_placeholder'
+        type: text
     slug:
-        label: rainlab.blog::lang.post.slug
+        label: 'rainlab.blog::lang.post.slug'
         span: right
-        placeholder: rainlab.blog::lang.post.slug_placeholder
+        placeholder: 'rainlab.blog::lang.post.slug_placeholder'
         preset:
             field: title
             type: slug
-
+        type: text
     toolbar:
-        type: partial
-        path: post_toolbar
+        span: full
         cssClass: collapse-visible
-
+        path: post_toolbar
+        type: partial
 secondaryTabs:
-    stretch: true
     fields:
         content:
-            tab: rainlab.blog::lang.post.tab_edit
+            tab: 'rainlab.blog::lang.post.tab_edit'
             type: RainLab\Blog\FormWidgets\BlogMarkdown
-            cssClass: field-slim blog-post-preview
+            cssClass: 'field-slim blog-post-preview'
             stretch: true
             mode: split
-
         categories:
-            tab: rainlab.blog::lang.post.tab_categories
+            label: Relation
+            nameFrom: name
+            descriptionFrom: description
+            span: auto
             type: relation
-            commentAbove: rainlab.blog::lang.post.categories_comment
-            placeholder: rainlab.blog::lang.post.categories_placeholder
-
+            tab: 'rainlab.blog::lang.post.tab_categories'
+        document:
+            label: 'Tài liệu'
+            mode: file
+            span: auto
+            type: mediafinder
+            tab: 'rainlab.blog::lang.post.tab_categories'
         published:
-            tab: rainlab.blog::lang.post.tab_manage
-            label: rainlab.blog::lang.post.published
+            tab: 'rainlab.blog::lang.post.tab_manage'
+            label: 'rainlab.blog::lang.post.published'
             span: left
             type: checkbox
-
         user:
-            tab: rainlab.blog::lang.post.tab_manage
-            label: rainlab.blog::lang.post.published_by
+            tab: 'rainlab.blog::lang.post.tab_manage'
+            label: 'rainlab.blog::lang.post.published_by'
             span: right
             type: dropdown
-            emptyOption: rainlab.blog::lang.post.current_user
-
+            emptyOption: 'rainlab.blog::lang.post.current_user'
         published_at:
-            tab: rainlab.blog::lang.post.tab_manage
-            label: rainlab.blog::lang.post.published_on
+            tab: 'rainlab.blog::lang.post.tab_manage'
+            label: 'rainlab.blog::lang.post.published_on'
             span: left
             cssClass: checkbox-align
             type: datepicker
@@ -61,16 +60,14 @@ secondaryTabs:
                 action: enable
                 field: published
                 condition: checked
-
         excerpt:
-            tab: rainlab.blog::lang.post.tab_manage
-            label: rainlab.blog::lang.post.excerpt
+            tab: 'rainlab.blog::lang.post.tab_manage'
+            label: 'rainlab.blog::lang.post.excerpt'
             type: textarea
             size: small
-
         featured_images:
-            tab: rainlab.blog::lang.post.tab_manage
-            label: rainlab.blog::lang.post.featured_images
+            tab: 'rainlab.blog::lang.post.tab_manage'
+            label: 'rainlab.blog::lang.post.featured_images'
             type: fileupload
             mode: image
             imageWidth: 200
