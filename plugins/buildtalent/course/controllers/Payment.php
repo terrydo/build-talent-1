@@ -75,7 +75,7 @@ class Payment extends Controller
         $response = $endUser->courses()
             ->where('course_id', '=', $course_id)
             ->where('payment_status', '=', config('buildtalent.payment_status.complete'))
-            ->with(['sections'])
+            ->with('sections.lessons')
             ->get();
 
         if (count($response->toArray()) > 0) {
