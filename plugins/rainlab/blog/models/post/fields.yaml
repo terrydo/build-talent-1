@@ -13,10 +13,9 @@ fields:
             type: slug
         type: text
     toolbar:
-        span: full
-        cssClass: collapse-visible
-        path: post_toolbar
         type: partial
+        path: post_toolbar
+        cssClass: collapse-visible
 secondaryTabs:
     fields:
         content:
@@ -26,18 +25,10 @@ secondaryTabs:
             stretch: true
             mode: split
         categories:
-            label: Relation
-            nameFrom: name
-            descriptionFrom: description
-            span: auto
+            tab: 'rainlab.blog::lang.post.tab_categories'
             type: relation
-            tab: 'rainlab.blog::lang.post.tab_categories'
-        document:
-            label: 'Tài liệu'
-            mode: file
-            span: auto
-            type: mediafinder
-            tab: 'rainlab.blog::lang.post.tab_categories'
+            commentAbove: 'rainlab.blog::lang.post.categories_comment'
+            placeholder: 'rainlab.blog::lang.post.categories_placeholder'
         published:
             tab: 'rainlab.blog::lang.post.tab_manage'
             label: 'rainlab.blog::lang.post.published'
@@ -72,3 +63,23 @@ secondaryTabs:
             mode: image
             imageWidth: 200
             imageHeight: 200
+        type:
+            label: 'Loại bài viết'
+            options:
+                - Blog
+                - 'Thư viện'
+            showSearch: true
+            span: auto
+            type: dropdown
+            tab: 'rainlab.blog::lang.post.tab_manage'
+        document:
+            label: 'Tài liệu bài viết'
+            span: auto
+            mode: file
+            trigger:
+                action: show
+                field: type
+                condition: 'value[1]'
+            type: mediafinder
+            comment: 'Dùng để gửi mail cho khách hàng đăng ký'
+            tab: 'rainlab.blog::lang.post.tab_manage'
