@@ -5,6 +5,7 @@ namespace Buildtalent\Course\Controllers;
 use AhmadFatoni\ApiGenerator\Helpers\Helpers;
 use Backend\Classes\Controller;
 use BackendMenu;
+use Buildtalent\Course\Models\Payment as ModelPayment;
 use Illuminate\Http\Request;
 use RainLab\User\Models\User;
 use Tymon\JWTAuth\Facades\JWTAuth;
@@ -22,6 +23,17 @@ class Payment extends Controller
         $this->helpers = $helpers;
 
         BackendMenu::setContext('Buildtalent.Course', 'main-menu-item', 'side-menu-item-buy-course');
+    }
+
+    public function paidCourses()
+    {
+        $token = JWTAuth::getToken();
+        $decodedToken = JWTAuth::getPayload($token)->toArray();
+        $id = $decodedToken['sub'];
+
+        $paidCourses = ModelPayment::select('course_id')->where('user_id', $id)->get();
+
+        return $this->helpers->apiArrayResponseBuilder(200, 'success', $paidCourses->toArray());
     }
 
     public function buyCourse(Request $request)
