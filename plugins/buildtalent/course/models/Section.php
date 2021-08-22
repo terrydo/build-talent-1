@@ -1,6 +1,9 @@
-<?php namespace Buildtalent\Course\Models;
+<?php
+
+namespace Buildtalent\Course\Models;
 
 use Model;
+
 /**
  * Model
  */
@@ -12,7 +15,7 @@ class Section extends Model
 
     protected $dates = ['deleted_at'];
 
-    protected $jsonable = ['document'];
+    protected $jsonable = ['documents'];
     /**
      * @var string The database table used by the model.
      */
@@ -21,8 +24,7 @@ class Section extends Model
     /**
      * @var array Validation rules
      */
-    public $rules = [
-    ];
+    public $rules = [];
 
     public $belongsTo = [
         'course' => Course::class,
