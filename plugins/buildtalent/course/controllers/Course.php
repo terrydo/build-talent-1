@@ -1,4 +1,6 @@
-<?php namespace Buildtalent\Course\Controllers;
+<?php
+
+namespace Buildtalent\Course\Controllers;
 
 use Backend\Classes\Controller;
 use BackendMenu;
@@ -12,7 +14,7 @@ use Tymon\JWTAuth\Facades\JWTAuth;
 
 class Course extends Controller
 {
-    public $implement = [        'Backend\Behaviors\ListController',        'Backend\Behaviors\FormController'    ];
+    public $implement = ['Backend\Behaviors\ListController',        'Backend\Behaviors\FormController'];
 
     public $listConfig = 'config_list.yaml';
     public $formConfig = 'config_form.yaml';
@@ -39,6 +41,10 @@ class Course extends Controller
     public function showCourse($id)
     {
         $response = CourseModel::where('id', $id)->with(['sections.lessons', 'tags'])->get();
+
+        if ($response->isEmpty()) {
+            return $this->helpers->apiArrayResponseBuilder(404, 'not_found');
+        }
 
         return $this->helpers->apiArrayResponseBuilder(200, 'success', $response);
     }
