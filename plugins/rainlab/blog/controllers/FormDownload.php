@@ -2,6 +2,7 @@
 
 use Backend\Classes\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Media\Classes\MediaLibrary;
 use Media\FormWidgets\MediaFinder;
 use October\Rain\Support\Facades\Mail;
@@ -26,16 +27,10 @@ class FormDownload extends Controller
         $post = $this->post->find($id)->toArray();
         $this->formDownload->create($request->all());
         $data = $request->all();
-//        dd(MediaLibrary::url($post['document']));
-//        $file = MediaLibrary::url($post['document']);
 
-//        dd($post);
         $vars = ['name' => $data['name'], 'url' => MediaLibrary::url($post['document'])];
         Mail::sendTo($data['email'], 'form_download', $vars);
-//        Mail::send('form_download', $vars, function ($message) use ($vars, $post) {
-//            $message->to($vars['email']);
-//            $message->attach(MediaLibrary::url($post['document']));
-//        });
 
+        return (new Response('success', 200));
     }
 }
