@@ -1,0 +1,19 @@
+fields:
+    expert_name:
+        label: 'Tên chuyên gia'
+        span: auto
+        type: text
+    avatar:
+        label: 'Ảnh chuyên gia'
+        mode: file
+        span: auto
+        type: mediafinder
+    position:
+        label: 'Vị trí công việc'
+        span: auto
+        type: text
+    introduce:
+        label: 'Giới thiệu của chuyên gia'
+        span: auto
+        size: ''
+        type: textarea

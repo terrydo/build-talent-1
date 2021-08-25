@@ -1,0 +1,10 @@
+name: Enterprise
+form: $/buildtalent/course/models/enterprise/fields.yaml
+modelClass: Buildtalent\Course\Models\Enterprise
+defaultRedirect: buildtalent/course/enterprise
+create:
+    redirect: 'buildtalent/course/enterprise/update/:id'
+    redirectClose: buildtalent/course/enterprise
+update:
+    redirect: buildtalent/course/enterprise
+    redirectClose: buildtalent/course/enterprise
