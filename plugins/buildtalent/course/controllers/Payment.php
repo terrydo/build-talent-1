@@ -31,7 +31,7 @@ class Payment extends Controller
         $decodedToken = JWTAuth::getPayload($token)->toArray();
         $id = $decodedToken['sub'];
 
-        $paidCourses = ModelPayment::select('course_id')->where('user_id', $id)->pluck('course_id');
+        $paidCourses = ModelPayment::select('course_id')->where('user_id', $id)->where('payment_status', 1)->pluck('course_id');
 
         return $this->helpers->apiArrayResponseBuilder(200, 'success', $paidCourses);
     }
