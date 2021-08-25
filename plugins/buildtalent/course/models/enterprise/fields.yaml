@@ -1,0 +1,10 @@
+fields:
+    name:
+        label: 'Tên doanh nghiệp'
+        span: auto
+        type: text
+    logo:
+        label: 'Logo doanh nghiệp'
+        mode: file
+        span: auto
+        type: mediafinder

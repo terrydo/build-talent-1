@@ -1,0 +1,6 @@
+columns:
+    expert_name:
+        label: 'Tên chuyên gia'
+        type: text
+        searchable: true
+        sortable: true

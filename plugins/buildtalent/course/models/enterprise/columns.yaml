@@ -1,0 +1,6 @@
+columns:
+    name:
+        label: 'Tên doanh nghiệp'
+        type: text
+        searchable: true
+        sortable: true
