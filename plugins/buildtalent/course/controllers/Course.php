@@ -67,12 +67,13 @@ class Course extends Controller
             return $query->where('level', '=', $level);
         })->when(isset($request->category_id), function ($query) use ($request) {
             $category_id = $request->category_id;
+            $category_id = $category_id && !is_array($category_id) ? [$category_id] : $category_id;
 
             return $query->whereIn('category_id', $category_id);
         })->when(isset($request->tags), function ($query) use ($request) {
             $tags = $request->tags;
 
-            return $query->whereHas('tags', function($q) use ($tags) {
+            return $query->whereHas('tags', function ($q) use ($tags) {
                 $q->whereIn('tag_id', $tags);
             });
         })->when(isset($request->price), function ($query) use ($request) {
