@@ -56,24 +56,27 @@ class Course extends Controller
 
     public function searchCourse(Request $request)
     {
-//        $level = $request->level;
-//        $category = $request->category;
-//        $price = $request->price;
+        //        $level = $request->level;
+        //        $category = $request->category;
+        //        $price = $request->price;
         $per_page = $request->per_page ? $request->per_page : config('buildtalent.course.paginate');
 
         $response = CourseModel::when(isset($request->level), function ($query) use ($request) {
-            $level = $request['keyword'];
+            $level = $request['level'];
 
             return $query->where('level', '=', $level);
         })->when(isset($request->category_id), function ($query) use ($request) {
-            $category_id = $request['category_id'];
+            $category_id = $request->category_id;
 
-            return $query->where('category_id', '=', $category_id);
+            return $query->whereIn('category_id', $category_id);
+        })->when(isset($request->tags), function ($query) use ($request) {
+            $tags = $request->tags;
+
+            return $query->whereIn('tags', $tags);
         })->when(isset($request->price), function ($query) use ($request) {
             $price = $request['price'];
 
-            if($price == config('buildtalent.course.price.free'))
-            {
+            if ($price == config('buildtalent.course.price.free')) {
                 return $query->where('price', '=', 0);
             } else {
                 return $query->where('price', '>', 0);
