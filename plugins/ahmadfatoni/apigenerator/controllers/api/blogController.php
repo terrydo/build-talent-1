@@ -27,24 +27,24 @@ class blogController extends Controller
         return $this->helpers->apiArrayResponseBuilder(200, 'success', $data->toArray());
     }
 
-//    public function index(){
-//
-//        $data = $this->Post->with('categories')->get()->toArray();
-//
-//        return $this->helpers->apiArrayResponseBuilder(200, 'success', $data);
-//    }
-//
-//    public function show($id){
-//
-//        $data = $this->Post::find($id);
-//
-//        if ($data){
-//            return $this->helpers->apiArrayResponseBuilder(200, 'success', [$data]);
-//        } else {
-//            $this->helpers->apiArrayResponseBuilder(404, 'not found', ['error' => 'Resource id=' . $id . ' could not be found']);
-//        }
-//
-//    }
+    public function index(){
+
+        $data = $this->Post->with('categories')->get()->toArray();
+
+        return $this->helpers->apiArrayResponseBuilder(200, 'success', $data);
+    }
+
+    public function show($id){
+
+        $data = $this->Post::find($id);
+
+        if ($data){
+            return $this->helpers->apiArrayResponseBuilder(200, 'success', [$data]);
+        } else {
+            $this->helpers->apiArrayResponseBuilder(404, 'not found', ['error' => 'Resource id=' . $id . ' could not be found']);
+        }
+
+    }
 //
 //    public function store(Request $request){
 //
