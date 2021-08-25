@@ -72,7 +72,9 @@ class Course extends Controller
         })->when(isset($request->tags), function ($query) use ($request) {
             $tags = $request->tags;
 
-            return $query->whereIn('tags', $tags);
+            return $query->whereHas('tags', function($q) use ($tags) {
+                $q->whereIn('tag_id', $tags);
+            });
         })->when(isset($request->price), function ($query) use ($request) {
             $price = $request['price'];
 

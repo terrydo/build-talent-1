@@ -30,8 +30,4 @@ class Lesson extends Model
         'section' => Section::class
     ];
 
-    public function getMediaAttribute($value)
-    {
-        return config('app.url') . '/storage/app/media' . $value;
-    }
 }
