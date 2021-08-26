@@ -30,11 +30,16 @@ navigation:
                 label: 'Yêu cầu mua khoá học'
                 url: buildtalent/course/payment
                 icon: icon-shopping-cart
+    main-menu-item-content-management:
+        label: 'Quản trị nội dung'
+        url: buildtalent/course/enterprise
+        icon: icon-life-ring
+        sideMenu:
             side-menu-item-enterprise:
                 label: 'Doanh nghiệp'
                 url: buildtalent/course/enterprise
                 icon: icon-sitemap
-            side-menu-item-expert:
+            side-menu-item:
                 label: 'Chuyên gia'
                 url: buildtalent/course/expert
                 icon: icon-suitcase
