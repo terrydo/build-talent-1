@@ -48,9 +48,6 @@
 1.0.16:
     - 'Created table buildtalent_course_reviews'
     - builder_table_create_buildtalent_course_reviews.php
-1.0.17:
-    - 'Created table buildtalent_course_reviews'
-    - builder_table_create_buildtalent_course_reviews.php
 1.0.18:
     - 'Updated table buildtalent_course_'
     - builder_table_update_buildtalent_course_.php
