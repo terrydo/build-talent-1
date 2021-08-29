@@ -18,8 +18,9 @@ class GeneralSettings extends Controller
     public function getSettings($key)
     {
         try {
-            $result = SettingsModel::select($key)->where('id', 1)->first()->toArray();
-            return $this->helper->apiArrayResponseBuilder(200, 'ok', $result[$key]);
+            $isGetAll = $key === 'all';
+            $result = SettingsModel::select($isGetAll ? '*' : $key)->where('id', 1)->first()->toArray();
+            return $this->helper->apiArrayResponseBuilder(200, 'ok', $isGetAll ? $result : $result[$key]);
         } catch (\Exception $e) {
             return response('', 400);
         }
