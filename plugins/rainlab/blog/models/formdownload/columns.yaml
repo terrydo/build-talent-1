@@ -1,0 +1,36 @@
+columns:
+    id:
+        label: id
+        type: number
+    name:
+        label: 'Họ tên'
+        type: text
+    sex:
+        label: 'Giới tính'
+        type: text
+    phone:
+        label: 'Số điện thoại'
+        type: number
+    email:
+        label: Email
+        type: text
+    company:
+        label: 'Công ty'
+        type: text
+    position:
+        label: 'Chức vu'
+        type: text
+    company_size:
+        label: 'Quy mô công ty'
+        type: text
+    province:
+        label: 'Tỉnh thành'
+        type: text
+    created_at:
+        label: 'Ngày gửi'
+        type: datetime
+    post_id:
+        label: Bài viết
+        type: text
+        relation: post
+        select: title

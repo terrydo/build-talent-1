@@ -1,4 +1,6 @@
-<?php namespace RainLab\Blog\Controllers;
+<?php
+
+namespace RainLab\Blog\Controllers;
 
 use BackendMenu;
 use Flash;

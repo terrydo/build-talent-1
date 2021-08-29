@@ -1,6 +1,7 @@
-<?php namespace RainLab\Blog\Models;
+<?php
 
-use Illuminate\Http\Request;
+namespace RainLab\Blog\Models;
+
 use Model;
 
 /**
@@ -9,7 +10,7 @@ use Model;
 class FormDownload extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-
+    use \October\Rain\Database\Traits\SimpleTree;
 
     /**
      * @var string The database table used by the model.
@@ -19,8 +20,7 @@ class FormDownload extends Model
     /**
      * @var array Validation rules
      */
-    public $rules = [
-    ];
+    public $rules = [];
     protected $fillable = [
         'name',
         'sex',
@@ -30,5 +30,18 @@ class FormDownload extends Model
         'position',
         'company_size',
         'province',
+        'post_id'
     ];
+
+    /**
+     * @var array Relations
+     */
+    public $belongsTo = [
+        'post' => [Post::class]
+    ];
+
+    function getSexAttribute($value)
+    {
+        return $value == '0' ? 'Nam' : 'Nữ';
+    }
 }

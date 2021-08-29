@@ -64,3 +64,6 @@
 1.5.3:
     - 'Updated table rainlab_blog_posts'
     - builder_table_update_rainlab_blog_posts_2.php
+1.5.4:
+    - 'Updated table rainlab_blog_form_downloads'
+    - builder_table_update_rainlab_blog_form_downloads.php

@@ -6,7 +6,7 @@ Route::get('fatoni/delete/api/{id}', array('as' => 'fatoni.delete.api', 'uses' =
 Route::resource('api/v1/posts', 'AhmadFatoni\ApiGenerator\Controllers\API\blogController', ['except' => ['destroy', 'create', 'edit']]);
 Route::get('api/v1/posts/get-post-by-type/{type}', 'AhmadFatoni\ApiGenerator\Controllers\API\blogController@getPostByType');
 //Route::get('api/v1/blogs/{id}/delete', ['as' => 'api/v1/blogs.delete', 'uses' => 'AhmadFatoni\ApiGenerator\Controllers\API\blogController@destroy']);
-Route::post('api/v1/posts/{id}/form-download', '\RainLab\Blog\Controllers\FormDownload@formDownload');
+Route::post('api/v1/posts/{id}/form-download', '\RainLab\Blog\Controllers\API\FormDownloader@sendDocToUser');
 //Route::resource('api/v1/posts', 'AhmadFatoni\ApiGenerator\Controllers\API\Posts APIController', ['except' => ['destroy', 'create', 'edit']]);
 Route::resource('api/v1/users', 'AhmadFatoni\ApiGenerator\Controllers\API\UsersAPIController', ['except' => ['index', 'create', 'edit', 'destroy']]);
 Route::group(['middleware' => '\Tymon\JWTAuth\Middleware\GetUserFromToken'], function () {
@@ -16,5 +16,5 @@ Route::group(['middleware' => '\Tymon\JWTAuth\Middleware\GetUserFromToken'], fun
     Route::get('api/v1/me', ['uses' => 'AhmadFatoni\ApiGenerator\Controllers\API\UsersAPIController@me']);
     Route::post('api/v1/me/update-profile', ['uses' => 'AhmadFatoni\ApiGenerator\Controllers\API\UsersAPIController@updateProfile']);
     Route::post('api/v1/me/update-avatar', ['uses' => 'AhmadFatoni\ApiGenerator\Controllers\API\UsersAPIController@updateAvatar']);
-//    Route::post('api/v1/me/update-password', ['uses' => 'AhmadFatoni\ApiGenerator\Controllers\API\UsersAPIController@updatePassword']);
+    //    Route::post('api/v1/me/update-password', ['uses' => 'AhmadFatoni\ApiGenerator\Controllers\API\UsersAPIController@updatePassword']);
 });

@@ -92,6 +92,11 @@ class Plugin extends PluginBase
                         'icon'        => 'icon-list-ul',
                         'url'         => Backend::url('rainlab/blog/categories'),
                         'permissions' => ['rainlab.blog.access_categories']
+                    ],
+                    'formdownload' => [
+                        'label'       => 'Đăng ký nhận tài liệu',
+                        'icon'        => 'icon-envelope-o',
+                        'url'         => Backend::url('rainlab/blog/formdownload'),
                     ]
                 ]
             ]
