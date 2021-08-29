@@ -1,6 +1,6 @@
 <?php
 
-namespace BuildTalent\Main\Classes;
+namespace Buildtalent\Main\Classes;
 
 use Closure;
 use Illuminate\Http\Request;
@@ -10,7 +10,7 @@ use Psr\Log\LoggerInterface;
 /**
  * Class CorsMiddleware
  *
- * @package BuildTalent\Main\Classes;
+ * @package Buildtalent\Main\Classes;
  */
 class CorsMiddleware
 {
@@ -40,7 +40,7 @@ class CorsMiddleware
             }
         } catch (\Throwable $e) {
             $logger->warning(
-                '[BuildTalent.CorsMiddleware] Failed to set response header: ' . $e->getMessage(),
+                '[Buildtalent.CorsMiddleware] Failed to set response header: ' . $e->getMessage(),
                 ['exception' => $e]
             );
         }

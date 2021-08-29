@@ -1,6 +1,6 @@
 <?php
 
-namespace BuildTalent\Main;
+namespace Buildtalent\Main;
 
 /**
  * The plugin.php file (called the plugin initialization script) defines the plugin information class.
@@ -12,17 +12,16 @@ class Plugin extends PluginBase
 {
     public function boot()
     {
+        parent::boot();
         $this->app['Illuminate\Contracts\Http\Kernel']
-            ->pushMiddleware('BuildTalent\Main\Classes\CorsMiddleware');
+            ->pushMiddleware('Buildtalent\Main\Classes\CorsMiddleware');
     }
 
-    public function pluginDetails()
+    public function registerComponents()
     {
-        return [
-            'name'        => 'Build Talent Cors',
-            'description' => 'Lorem ipsum dolor sit amet',
-            'author'      => 'Trung',
-            'icon'        => 'icon-leaf'
-        ];
+    }
+
+    public function registerSettings()
+    {
     }
 }

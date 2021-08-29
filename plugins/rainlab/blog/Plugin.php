@@ -1,4 +1,6 @@
-<?php namespace RainLab\Blog;
+<?php
+
+namespace RainLab\Blog;
 
 use Backend;
 use Controller;
@@ -120,19 +122,21 @@ class Plugin extends PluginBase
         /*
          * Register the image tag processing callback
          */
-        TagProcessor::instance()->registerCallback(function($input, $preview) {
+        TagProcessor::instance()->registerCallback(function ($input, $preview) {
             if (!$preview) {
                 return $input;
             }
 
-            return preg_replace('|\<img src="image" alt="([0-9]+)"([^>]*)\/>|m',
+            return preg_replace(
+                '|\<img src="image" alt="([0-9]+)"([^>]*)\/>|m',
                 '<span class="image-placeholder" data-index="$1">
                     <span class="upload-dropzone">
                         <span class="label">Click or drop an image...</span>
                         <span class="indicator"></span>
                     </span>
                 </span>',
-            $input);
+                $input
+            );
         });
     }
 
@@ -141,7 +145,7 @@ class Plugin extends PluginBase
         /*
          * Register menu items for the RainLab.Pages plugin
          */
-        Event::listen('pages.menuitem.listTypes', function() {
+        Event::listen('pages.menuitem.listTypes', function () {
             return [
                 'blog-category'       => 'rainlab.blog::lang.menuitem.blog_category',
                 'all-blog-categories' => 'rainlab.blog::lang.menuitem.all_blog_categories',
@@ -151,20 +155,18 @@ class Plugin extends PluginBase
             ];
         });
 
-        Event::listen('pages.menuitem.getTypeInfo', function($type) {
+        Event::listen('pages.menuitem.getTypeInfo', function ($type) {
             if ($type == 'blog-category' || $type == 'all-blog-categories') {
                 return Category::getMenuTypeInfo($type);
-            }
-            elseif ($type == 'blog-post' || $type == 'all-blog-posts' || $type == 'category-blog-posts') {
+            } elseif ($type == 'blog-post' || $type == 'all-blog-posts' || $type == 'category-blog-posts') {
                 return Post::getMenuTypeInfo($type);
             }
         });
 
-        Event::listen('pages.menuitem.resolveItem', function($type, $item, $url, $theme) {
+        Event::listen('pages.menuitem.resolveItem', function ($type, $item, $url, $theme) {
             if ($type == 'blog-category' || $type == 'all-blog-categories') {
                 return Category::resolveMenuItem($item, $url, $theme);
-            }
-            elseif ($type == 'blog-post' || $type == 'all-blog-posts' || $type == 'category-blog-posts') {
+            } elseif ($type == 'blog-post' || $type == 'all-blog-posts' || $type == 'category-blog-posts') {
                 return Post::resolveMenuItem($item, $url, $theme);
             }
         });

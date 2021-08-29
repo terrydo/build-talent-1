@@ -1,0 +1,24 @@
+plugin:
+    name: 'buildtalent.main::lang.plugin.name'
+    description: 'buildtalent.main::lang.plugin.description'
+    author: buildtalent
+    icon: oc-icon-file-movie-o
+    homepage: ''
+navigation:
+    btmain:
+        label: 'Quản trị nội dung'
+        url: buildtalent/main
+        icon: icon-life-ring
+        sideMenu:
+            enterprise:
+                label: 'Doanh nghiệp'
+                url: buildtalent/main/enterprise
+                icon: icon-sitemap
+            expert:
+                label: 'Chuyên gia'
+                url: buildtalent/main/expert
+                icon: icon-suitcase
+            test:
+                label: 'Test'
+                url: buildtalent/main/test
+                icon: icon-suitcase

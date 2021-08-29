@@ -5,8 +5,6 @@ namespace Buildtalent\Course\Controllers;
 use Backend\Classes\Controller;
 use BackendMenu;
 use Illuminate\Http\Request;
-use Illuminate\Support\Arr;
-use RainLab\User\Facades\Auth;
 use RainLab\User\Models\User;
 use AhmadFatoni\ApiGenerator\Helpers\Helpers;
 use Buildtalent\Course\Models\Course as CourseModel;

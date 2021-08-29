@@ -1,0 +1,10 @@
+name: Expert
+form: $/buildtalent/main/models/expert/fields.yaml
+modelClass: Buildtalent\Main\Models\Expert
+defaultRedirect: buildtalent/main/expert
+create:
+    redirect: 'buildtalent/main/expert/update/:id'
+    redirectClose: buildtalent/main/expert
+update:
+    redirect: buildtalent/main/expert
+    redirectClose: buildtalent/main/expert

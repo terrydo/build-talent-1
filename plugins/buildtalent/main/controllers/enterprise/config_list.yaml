@@ -1,6 +1,6 @@
-list: $/buildtalent/course/models/expert/columns.yaml
-modelClass: Buildtalent\Course\Models\Expert
-title: Expert
+list: $/buildtalent/main/models/enterprise/columns.yaml
+modelClass: Buildtalent\Main\Models\Enterprise
+title: Enterprise
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true
 showCheckboxes: true
@@ -9,4 +9,4 @@ toolbar:
     buttons: list_toolbar
     search:
         prompt: 'backend::lang.list.search_prompt'
-recordUrl: 'buildtalent/course/expert/update/:id'
+recordUrl: 'buildtalent/main/enterprise/update/:id'
