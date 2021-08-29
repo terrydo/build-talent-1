@@ -1,1 +1,22 @@
-1.0.0: First version of Build Talent
+1.0.0: 'First version of Build Talent'
+1.0.1:
+    - 'Created table buildtalent_main_general_settings'
+    - builder_table_create_buildtalent_main_general_settings.php
+1.0.2:
+    - 'Updated table buildtalent_main_general_settings'
+    - builder_table_update_buildtalent_main_general_settings.php
+1.0.3:
+    - 'Updated table buildtalent_main_general_settings'
+    - builder_table_update_buildtalent_main_general_settings_2.php
+1.0.4:
+    - 'Updated table buildtalent_main_general_settings'
+    - builder_table_update_buildtalent_main_general_settings_3.php
+1.0.5:
+    - 'Updated table buildtalent_main_general_settings'
+    - builder_table_update_buildtalent_main_general_settings_4.php
+1.0.6:
+    - 'Updated table buildtalent_main_general_settings'
+    - builder_table_update_buildtalent_main_general_settings_5.php
+1.0.7:
+    - 'Updated table buildtalent_main_general_settings'
+    - builder_table_update_buildtalent_main_general_settings_6.php
