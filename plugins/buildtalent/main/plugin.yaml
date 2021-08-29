@@ -18,7 +18,7 @@ navigation:
                 label: 'Chuyên gia'
                 url: buildtalent/main/expert
                 icon: icon-suitcase
-            test:
-                label: 'Test'
-                url: buildtalent/main/test
-                icon: icon-suitcase
+            general:
+                label: 'Cài đặt chung'
+                url: buildtalent/main/generalsettings
+                icon: icon-sliders

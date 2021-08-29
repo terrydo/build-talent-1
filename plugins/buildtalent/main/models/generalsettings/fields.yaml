@@ -1,0 +1,19 @@
+tabs:
+    fields:
+        'general[contact_phone]':
+            label: 'Điện thoại liên hệ'
+            span: auto
+            type: text
+            tab: 'Cài đặt chung'
+        'general[email]':
+            label: 'Email liên hệ'
+            span: auto
+            type: text
+            tab: 'Cài đặt chung'
+        'home[loggedin_banner]':
+            label: 'Media finder'
+            mode: image
+            span: auto
+            type: mediafinder
+            commentAbove: 'Banner sau đăng nhập'
+            tab: 'Trang chủ'

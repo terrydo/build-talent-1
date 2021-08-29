@@ -1,0 +1,10 @@
+name: GeneralSettings
+form: $/buildtalent/main/models/generalsettings/fields.yaml
+modelClass: Buildtalent\Main\Models\GeneralSettings
+defaultRedirect: buildtalent/main/generalsettings
+create:
+    redirect: 'buildtalent/main/generalsettings/update/:id'
+    redirectClose: buildtalent/main/generalsettings
+update:
+    redirect: buildtalent/main/generalsettings
+    redirectClose: buildtalent/main/generalsettings
