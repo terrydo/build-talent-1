@@ -62,5 +62,5 @@
 1.5.1: 'Fixes interaction with Translate plugin'
 1.5.2: 'Minor styling improvements'
 1.5.3:
-    - 'Created table rainlab_blog_form_downloads'
-    - builder_table_create_rainlab_blog_form_downloads.php
+    - 'Updated table rainlab_blog_posts'
+    - builder_table_update_rainlab_blog_posts_2.php
