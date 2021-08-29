@@ -4,6 +4,7 @@ namespace Buildtalent\Course\Controllers;
 
 use Backend\Classes\Controller;
 use BackendMenu;
+use Buildtalent\Course\Models\Review;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use RainLab\User\Facades\Auth;
@@ -40,11 +41,23 @@ class Course extends Controller
 
     public function showCourse($id)
     {
-        $response = CourseModel::where('id', $id)->with(['sections.lessons', 'tags'])->get();
+        $response = CourseModel::where('id', $id)
+            ->with(['sections.lessons', 'tags'])
+            ->withCount('reviews')
+            ->get();
 
         if ($response->isEmpty()) {
             return $this->helpers->apiArrayResponseBuilder(404, 'not_found');
         }
+
+        return $this->helpers->apiArrayResponseBuilder(200, 'success', $response);
+    }
+
+    public function getCourseReview($course_id)
+    {
+        $response = Review::where('course_id', '=', $course_id)
+            ->with('user.avatar')
+            ->get();
 
         return $this->helpers->apiArrayResponseBuilder(200, 'success', $response);
     }
@@ -84,6 +97,10 @@ class Course extends Controller
             } else {
                 return $query->where('price', '>', 0);
             }
+        })->when(isset($request->average_rating), function ($query) use ($request) {
+            $average_rating = $request['average_rating'];
+//            dd($average_rating);
+            return $query->where('average_rating', '>=', $average_rating);
         })->with(['tags'])->paginate($per_page);
 
         return $this->helpers->apiArrayResponseBuilder(200, 'success', $response);
@@ -112,5 +129,31 @@ class Course extends Controller
         }
 
         return $this->helpers->apiArrayResponseBuilder(200, 'success', collect());
+    }
+
+    public function reviewCourse($course_id, Request $request)
+    {
+        $token = JWTAuth::getToken();
+        $user = JWTAuth::toUser($token);
+
+        $response = Review::create([
+            'user_id' => $user->id,
+            'course_id' => $course_id,
+            'comment' => $request->comment,
+            'rating' => $request->rating,
+            'helpful' => 0,
+        ]);
+
+        $totalRating = 0;
+        $ratings = CourseModel::find($course_id)->reviews->pluck('rating');
+        foreach ($ratings as $rating) {
+            $totalRating += $rating;
+        }
+
+        $course = CourseModel::find($course_id);
+        $course->average_rating = round($totalRating / count($course->reviews),2);
+        $course->save();
+
+        return $this->helpers->apiArrayResponseBuilder(200, 'success', $response->toArray());
     }
 }
