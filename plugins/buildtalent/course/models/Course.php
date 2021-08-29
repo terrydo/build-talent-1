@@ -26,13 +26,13 @@ class Course extends Model
     ];
 
     public $hasMany = [
-        'sections' => Section::class
+        'sections' => Section::class,
+        'reviews' => Review::class,
     ];
 
     public $belongsTo = [
         'category' => Category::class
     ];
-
     public $belongsToMany = [
         'tags' => [
             Tag::class,
