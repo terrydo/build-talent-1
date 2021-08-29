@@ -99,8 +99,12 @@ class Course extends Controller
             }
         })->when(isset($request->average_rating), function ($query) use ($request) {
             $average_rating = $request['average_rating'];
-//            dd($average_rating);
             return $query->where('average_rating', '>=', $average_rating);
+        })->when(isset($request->sort_by), function ($query) use ($request) {
+            $sort_by =  isset($request['sort_by']) ? $request['sort_by'] : 'asc';
+            $order_by = $request['order_by'];
+
+            return $query->orderBy($order_by, $sort_by);
         })->with(['tags'])->paginate($per_page);
 
         return $this->helpers->apiArrayResponseBuilder(200, 'success', $response);
@@ -151,7 +155,7 @@ class Course extends Controller
         }
 
         $course = CourseModel::find($course_id);
-        $course->average_rating = round($totalRating / count($course->reviews),2);
+        $course->average_rating = round($totalRating / count($course->reviews), 2);
         $course->save();
 
         return $this->helpers->apiArrayResponseBuilder(200, 'success', $response->toArray());
