@@ -51,11 +51,13 @@ class Course extends Controller
         return $this->helpers->apiArrayResponseBuilder(200, 'success', $response);
     }
 
-    public function getCourseReview($course_id)
+    public function getCourseReview($course_id, Request $request)
     {
+        $per_page = isset($request->per_page) ? $request->per_page : 10;
+
         $response = Review::where('course_id', '=', $course_id)
             ->with('user.avatar')
-            ->get();
+            ->paginate($per_page);
 
         return $this->helpers->apiArrayResponseBuilder(200, 'success', $response);
     }
