@@ -10,10 +10,68 @@ tabs:
             span: auto
             type: text
             tab: 'Cài đặt chung'
+        'general[facebook]':
+            label: Facebook
+            span: auto
+            type: text
+            tab: 'Cài đặt chung'
+        'general[zalo]':
+            label: Zalo
+            span: auto
+            type: text
+            tab: 'Cài đặt chung'
+        'general[linkedin]':
+            label: LinkedIn
+            span: auto
+            type: text
+            tab: 'Cài đặt chung'
         'home[loggedin_banner]':
             label: 'Media finder'
             mode: image
             span: auto
             type: mediafinder
             commentAbove: 'Banner sau đăng nhập'
+            tab: 'Trang chủ'
+        'home[testimonials]':
+            label: 'Lời chứng thực học viên'
+            prompt: 'Thêm lời chứng thực'
+            style: default
+            span: full
+            type: repeater
+            tab: 'Trang chủ'
+            form:
+                fields:
+                    name:
+                        label: 'Tên học viên'
+                        span: auto
+                        type: text
+                    position:
+                        label: 'Chức vụ'
+                        span: auto
+                        type: text
+                    content:
+                        label: 'Nội dung'
+                        size: ''
+                        span: auto
+                        type: textarea
+                    avatar:
+                        label: 'Ảnh học viên'
+                        mode: image
+                        span: auto
+                        type: mediafinder
+                        comment: 'Khuyến khích cỡ 200x200'
+        'home[courses_count]':
+            label: 'Số khóa học'
+            span: left
+            type: number
+            tab: 'Trang chủ'
+        'home[students_count]':
+            label: 'Số học viên'
+            span: left
+            type: number
+            tab: 'Trang chủ'
+        'home[success_rate]':
+            label: '% Học viên thành công'
+            span: left
+            type: number
             tab: 'Trang chủ'
