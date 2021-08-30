@@ -17,7 +17,7 @@ class GeneralSettings extends Model
      */
     public $timestamps = false;
 
-    protected $jsonable = ['general', 'home'];
+    protected $jsonable = ['general', 'home', 'aboutus'];
     /**
      * @var string The database table used by the model.
      */

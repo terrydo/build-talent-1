@@ -75,3 +75,10 @@ tabs:
             span: left
             type: number
             tab: 'Trang chủ'
+        'aboutus[intro_video]':
+            label: 'Video giới thiệu'
+            mode: file
+            span: auto
+            type: mediafinder
+            comment: 'Xuất hiện khi ấn nút play'
+            tab: 'Trang giới thiệu'

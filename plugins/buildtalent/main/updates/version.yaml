@@ -20,3 +20,6 @@
 1.0.7:
     - 'Updated table buildtalent_main_general_settings'
     - builder_table_update_buildtalent_main_general_settings_6.php
+1.0.8:
+    - 'Updated table buildtalent_main_general_settings'
+    - builder_table_update_buildtalent_main_general_settings_7.php
