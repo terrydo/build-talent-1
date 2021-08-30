@@ -20,5 +20,5 @@ navigation:
                 icon: icon-suitcase
             general:
                 label: 'Cài đặt chung'
-                url: buildtalent/main/generalsettings
+                url: buildtalent/main/generalsettings/update/1
                 icon: icon-sliders
